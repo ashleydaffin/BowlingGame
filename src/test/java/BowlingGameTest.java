@@ -15,4 +15,13 @@ public class BowlingGameTest {
         assertEquals(0, game.score());
 
     }
+
+    @Test
+    @DisplayName("Test for score to equal 20, if each frame has a score of 1")
+    public void testForAllOnesScored(){
+        BowlingGame game = new BowlingGame();
+        for(int i=0; i<20; i++)
+            game.roll(1);
+        assertEquals(20, game.score());
+    }
 }
