@@ -31,6 +31,7 @@ public class BowlingGameTest {
         rollMany(20,1);
         assertEquals(20, game.score());
     }
+
     @Test
     @DisplayName("Test score for one spare")
     public void testOneSpare(){
