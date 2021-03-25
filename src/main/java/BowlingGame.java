@@ -9,7 +9,11 @@ public class BowlingGame {
         int score=0;
         int frameIndex =0;
         for(int frame=0; frame<10; frame++){
-            if (isSpare(frameIndex)){ //spare
+            if (rolls[frameIndex]==10){
+                score+= 10 +rolls[frameIndex+1] + rolls[frameIndex+2];
+                frameIndex++;
+            }
+            else if (isSpare(frameIndex)){ //spare
                 score += 10 + rolls[frameIndex+2];
                 frameIndex+=2;
             } else {
