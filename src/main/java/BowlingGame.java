@@ -10,7 +10,7 @@ public class BowlingGame {
         int frameIndex =0;
         for(int frame=0; frame<10; frame++){
             if (isStrike(frameIndex)){
-                score+= 10 +rolls[frameIndex+1] + rolls[frameIndex+2];
+                score+= 10 +strikeBonus(frameIndex);
                 frameIndex++;
             }
             else if (isSpare(frameIndex)){ //spare
@@ -34,6 +34,10 @@ public class BowlingGame {
 
     private int spareBonus(int frameIndex){
         return rolls[frameIndex+2];
+    }
+
+    private int strikeBonus(int frameIndex){
+        return rolls[frameIndex+1] + rolls[frameIndex+2];
     }
 
 }
